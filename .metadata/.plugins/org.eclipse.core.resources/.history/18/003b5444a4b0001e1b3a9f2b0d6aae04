@@ -1,0 +1,48 @@
+package com;
+
+public class User {
+	
+	private String userFirstName = "";
+
+	private String userLastName = "";
+	
+	private String userEmailAddress = "";
+	
+
+	public User(String userFirstName, String userLastName, String userEmailAddress) {
+		super();
+		this.userFirstName = userFirstName;
+		this.userLastName = userLastName;
+		this.userEmailAddress = userEmailAddress;
+	}
+
+	public String getUserFirstName() {
+		return userFirstName;
+	}
+
+	public void setUserFirstName(String userFirstName) {
+		this.userFirstName = userFirstName;
+	}
+
+	public String getUserLastName() {
+		return userLastName;
+	}
+
+	public void setUserLastName(String userLastName) {
+		this.userLastName = userLastName;
+	}
+
+	public String getUserEmailAddress() {
+		return userEmailAddress;
+	}
+
+	public void setUserEmailAddress(String userEmailAddress) {
+		this.userEmailAddress = userEmailAddress;
+	}
+	
+	@Override
+    public String toString() {
+        return userFirstName + " " + userLastName;
+    }
+
+}

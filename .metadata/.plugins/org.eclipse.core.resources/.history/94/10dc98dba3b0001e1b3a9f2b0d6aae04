@@ -1,0 +1,15 @@
+package com;
+
+public class Ticket {
+	
+	enum TrainSection {
+	    A, B
+	  }
+	
+    private static int seatCounter = 1;
+    private User user;
+    private int seat;
+    private TrainSection section;
+    private double price;
+
+}

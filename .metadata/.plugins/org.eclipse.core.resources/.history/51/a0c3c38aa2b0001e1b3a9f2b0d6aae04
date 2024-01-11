@@ -1,0 +1,18 @@
+package com;
+
+public class Receipt {
+	
+	enum Section {
+	    A,
+	    B
+	  }
+	
+	private String from = "London";
+
+	private String to = "London";
+	
+	private UserInfo user = new UserInfo();
+	
+	private String pricePaid = "$20";
+
+}

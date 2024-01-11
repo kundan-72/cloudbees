@@ -1,0 +1,51 @@
+package com.test;
+
+import com.Ticket;
+import com.User;
+import com.util.TrainSection;
+import com.util.TrainUtil;
+
+public class TicketApp {
+	
+	public static void main(String[] args) {
+		
+	 TrainUtil train = new TrainUtil();
+
+     User user1 = new User("Kundan", "Doiphode", "kundan@d.com");
+     User user2 = new User("Tanuja", "Cb", "t@cb.com");
+     User user3 = new User("Tom", "Cruise", "t@c.com");
+
+     Ticket ticket1 = train.purchaseTicket(user1, TrainSection.A);
+     Ticket ticket2 = train.purchaseTicket(user2, TrainSection.A);
+     Ticket ticket3 = train.purchaseTicket(user3, TrainSection.B);
+     
+     System.out.println("Ticket details: ");
+     train.viewReceipt("kundan@d.com");
+     System.out.println("\n");
+
+     System.out.println("Users in Section A:");
+     train.viewUsersBySection(TrainSection.A);
+
+     System.out.println("\n");
+     
+     train.removeUser("kundan@d.com");
+
+     System.out.println("Users in Section A after removal:");
+     train.viewUsersBySection(TrainSection.A);
+
+     System.out.println("\n");
+
+     train.purchaseTicket(user1, TrainSection.A);
+     System.out.println("Users in Section A before modification:");
+     
+     
+     train.viewUsersBySection(TrainSection.A);
+     train.modifyUserSeat("kundan@d.com", 10);
+
+     System.out.println("\n");
+
+     System.out.println("Users in Section A after modification:");
+     train.viewUsersBySection(TrainSection.A);
+
+	}
+}

@@ -1,0 +1,11 @@
+package com;
+
+public class UserInfo {
+	
+	private static String userFirstName = "";
+
+	private static String userLastName = "";
+	
+	private static String userEmailAddress = "";
+
+}

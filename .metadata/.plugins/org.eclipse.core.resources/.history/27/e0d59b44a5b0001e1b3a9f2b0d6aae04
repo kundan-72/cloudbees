@@ -1,0 +1,44 @@
+package com.util;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.Ticket;
+import com.User;
+
+
+public class TrainUtil {
+
+	private Map<String, Ticket> ticketsByUser = new HashMap<>();
+
+	public Ticket purchaseTicket(User user, TrainSection section, double price) {
+		Ticket ticket = new Ticket(user, section, price);
+		ticketsByUser.put(user.getEmail(), ticket);
+		return ticket;
+	}
+
+	public Ticket viewTicket(String userEmail) {
+		return ticketsByUser.get(userEmail);
+	}
+
+	public void viewUsersBySection(TrainSection section) {
+		for (Ticket ticket : ticketsByUser.values()) {
+			if (ticket.getSection() == section) {
+				System.out
+						.println(ticket.getUser() + " - Seat: " + ticket.getSeat() + " - Price: $" + ticket.getPrice());
+			}
+		}
+	}
+
+	public void removeUser(String userEmail) {
+		ticketsByUser.remove(userEmail);
+	}
+
+	public void modifyUserSeat(String userEmail, int newSeat) {
+		Ticket ticket = ticketsByUser.get(userEmail);
+		if (ticket != null) {
+			ticket.setSeat(newSeat);
+		}
+	}
+
+}
