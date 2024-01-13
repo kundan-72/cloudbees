@@ -12,7 +12,7 @@ public class TicketApp {
 	 TrainUtil train = new TrainUtil();
 
      User user1 = new User("Kundan", "Doiphode", "kundan@d.com");
-     User user2 = new User("Tanuja", "Cb", "t@cb.com");
+     User user2 = new User("Cloud", "bees", "c@cb.com");
      User user3 = new User("Tom", "Cruise", "t@c.com");
 
      Ticket ticket1 = train.purchaseTicket(user1, TrainSection.A);
